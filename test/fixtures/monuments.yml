@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  honorees: MyString
+  city: MyString
+  state: MyString
+  coordinates: 1
+  symbol_type: MyString
+  sponsors: MyString
+  year_dedicated: 1
+  year_removed: 1
+
+two:
+  name: MyString
+  honorees: MyString
+  city: MyString
+  state: MyString
+  coordinates: 1
+  symbol_type: MyString
+  sponsors: MyString
+  year_dedicated: 1
+  year_removed: 1

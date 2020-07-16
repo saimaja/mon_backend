@@ -5,3 +5,37 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Monument.destroy_all
+Travelogue.destroy_all
+User.destroy_all
+MonTravel.destroy_all
+Favorite.destroy_all
+
+require 'csv'
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'heritage.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+    monument = Monument.find_or_create_by(
+        name: row['feature_name'],
+        honorees: row['Honorees'],
+        city: row['City'],
+        county: row['County'],
+        state: row['State'],
+        coordinates: row['Coordinates'],
+        symbol_type: row['Symbol Type'],
+        sponsors: row['Sponsors'],
+        year_dedicated: row['Year Dedicated'],
+        year_removed: row['Year Removed'],
+        tracking_status: row['Tracking Status'])
+    
+end
+
+saima = User.create(name: 'Saima Akhtar', username: 'sja', password: '123', bio: 'Architect turned Developer', admin: true)
+shannon = User.create(name: 'Shannon Nabors', username: 'sn', password: '123', bio: 'Flatiron SE Coach and Flag lover', admin: false)
+
+f1 = Favorite.create(user: saima, monument: Monument.first)
+f2 = Favorite.create(user: saima, monument: Monument.second)
+f3 = Favorite.create(user: shannon, monument: Monument.third)
+f4 = Favorite.create(user: shannon, monument: Monument.fourth)
+
