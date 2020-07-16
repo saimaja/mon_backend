@@ -6,11 +6,12 @@ class CreateMonuments < ActiveRecord::Migration[6.0]
       t.string :city
       t.string :county
       t.string :state
-      t.string :coordinates
+      t.float :latitude, :precision => 10, :scale => 6
+      t.float :longitude, :precision => 10, :scale => 6
       t.string :symbol_type
       t.string :sponsors
-      t.string :year_dedicated
-      t.string :year_removed
+      t.integer :year_dedicated
+      t.integer :year_removed
       t.string :tracking_status
 
       t.timestamps

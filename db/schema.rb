@@ -35,11 +35,12 @@ ActiveRecord::Schema.define(version: 2020_07_16_172709) do
     t.string "city"
     t.string "county"
     t.string "state"
-    t.string "coordinates"
+    t.float "latitude"
+    t.float "longitude"
     t.string "symbol_type"
     t.string "sponsors"
-    t.string "year_dedicated"
-    t.string "year_removed"
+    t.integer "year_dedicated"
+    t.integer "year_removed"
     t.string "tracking_status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
