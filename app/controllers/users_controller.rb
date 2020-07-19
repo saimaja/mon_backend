@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
     def index
+        render json: User.all
     end
 
     def create
@@ -34,8 +35,8 @@ class UsersController < ApplicationController
     end
 
     def registerParams
-        params.permit(:first_name, :last_name, :username, :address, :password)
+        params.permit(:name, :username, :password, :bio)
     end
 
 end
-end
+

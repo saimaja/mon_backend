@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post '/login', to: 'users#login'
+  
   resources :monuments
   resources :mon_travels
   resources :favorites
