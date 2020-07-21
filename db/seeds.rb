@@ -40,6 +40,7 @@ csv.each do |row|
         year_dedicated: yd,
         year_removed: yr,
         tracking_status: row['Tracking Status'])   
+    
 end
 
 saima = User.create(name: 'Saima Akhtar', username: 'sja', password: '123', bio: 'Architect turned Developer', admin: true)
