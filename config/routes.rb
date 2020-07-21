@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   post '/login', to: 'users#login'
-  
+  get '/map', to: 'monuments#map'
+  get '/about', to: 'monuments#about'
   resources :monuments
   resources :mon_travels
   resources :favorites

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
     def index
-        render json: User.all
+        render json: User.all.to_json(:except => [:password, :created_at, :updated_at])
     end
 
     def create
@@ -20,8 +20,9 @@ class UsersController < ApplicationController
     end
 
     def show
+        render json: User.find(params[:id]).to_json(:except => [:password, :created_at, :updated_at], :include => [:favorites, :travelogues])
     end
-
+    
     def update
     end
 
