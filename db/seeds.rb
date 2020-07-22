@@ -13,8 +13,8 @@ MonTravel.destroy_all
 Favorite.destroy_all
 
 require 'csv'
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'heritage.csv'))
-csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv_blog = File.read(Rails.root.join('lib', 'seeds', 'heritage.csv'))
+csv = CSV.parse(csv_blog, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
     # byebug
     if row['Year Dedicated'] == nil
@@ -45,9 +45,17 @@ end
 
 saima = User.create(name: 'Saima Akhtar', username: 'sja', password: '123', bio: 'Architect turned Developer', admin: true)
 shannon = User.create(name: 'Shannon Nabors', username: 'sn', password: '123', bio: 'Flatiron SE Coach and Flag lover', admin: false)
+lex = User.create(name: 'Lex B', username: 'lb', password: '123', bio: 'Comic creater and coder', admin: false)
 
 f1 = Favorite.create(user: saima, monument: Monument.first)
 f2 = Favorite.create(user: saima, monument: Monument.second)
 f3 = Favorite.create(user: shannon, monument: Monument.third)
 f4 = Favorite.create(user: shannon, monument: Monument.fourth)
+
+t1 = Travelogue.create(title: 'RGB', blog: 'Ran by this school that was renamed after RBG!', user: saima )
+t2 = Travelogue.create(title: 'SouthEast USA', blog: 'I had no idea that there were still so many confederate monuments in the southeast of this country.', user: shannon )
+t3 = Travelogue.create(title: 'Are Road Markers Monuments?', blog: 'What constitues a monument?', user: lex )
+t4 = Travelogue.create(title: 'Should monuments have a place in our museums?', blog: 'What relics of our past can tell us about our future and how museums can help', user: saima )
+
+
 
