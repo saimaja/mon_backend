@@ -20,7 +20,8 @@ class UsersController < ApplicationController
     end
 
     def show
-        render json: User.find(params[:id]).to_json(:except => [:password, :created_at, :updated_at], :include => [:favorites, :travelogues])
+        user = User.find(params[:id])
+        render json: user.to_json(:except => [:password, :created_at, :updated_at], :include => [:favorites, :travelogues, :monuments])
     end
     
     def update

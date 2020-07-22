@@ -1,7 +1,7 @@
 class TraveloguesController < ApplicationController
 
     def index
-        render json: Travelogue.all.to_json(:except => [:created_at, :updated_at])
+        render json: Travelogue.all.to_json
     end
 
     def show
