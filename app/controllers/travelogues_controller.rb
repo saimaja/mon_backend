@@ -1,7 +1,7 @@
 class TraveloguesController < ApplicationController
 
     def index
-        render json: Travelogue.all.to_json
+        render json: Travelogue.all.to_json(:include => :mon_travels)
     end
 
     def show

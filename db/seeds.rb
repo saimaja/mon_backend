@@ -43,9 +43,9 @@ csv.each do |row|
     
 end
 
-saima = User.create(name: 'Saima Akhtar', username: 'sja', password: '123', bio: 'Architect turned Developer', admin: true)
-shannon = User.create(name: 'Shannon Nabors', username: 'sn', password: '123', bio: 'Flatiron SE Coach and Flag lover', admin: false)
-lex = User.create(name: 'Lex B', username: 'lb', password: '123', bio: 'Comic creater and coder', admin: false)
+saima = User.create(name: 'Saima Akhtar', username: 'sja', password: '123', about: 'Architect turned Developer', location: 'Arlington, VA', interests: 'Buildings and Coding', admin: true)
+shannon = User.create(name: 'Shannon Nabors', username: 'sn', password: '123', about: 'Flatiron SE Coach and Flag lover', location: 'Silver Spring, MD', interests: 'Flags', admin: false)
+lex = User.create(name: 'Lex B', username: 'lb', password: '123', about: 'Comic creater and coder', location: 'Washington, DC', interests: 'Drawing and Physics', admin: false)
 
 f1 = Favorite.create(user: saima, monument: Monument.first)
 f2 = Favorite.create(user: saima, monument: Monument.second)

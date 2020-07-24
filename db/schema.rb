@@ -58,7 +58,9 @@ ActiveRecord::Schema.define(version: 2020_07_22_210555) do
     t.string "name"
     t.string "username"
     t.string "password"
-    t.text "bio"
+    t.text "about"
+    t.string "location"
+    t.string "interests"
     t.boolean "admin"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
