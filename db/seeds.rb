@@ -52,10 +52,16 @@ f2 = Favorite.create(user: saima, monument: Monument.second)
 f3 = Favorite.create(user: shannon, monument: Monument.third)
 f4 = Favorite.create(user: shannon, monument: Monument.fourth)
 
-t1 = Travelogue.create(title: 'RGB', blog: 'Ran by this school that was renamed after RBG!', user: saima )
+t1 = Travelogue.create(title: 'Obama', blog: 'Ran by this high school that was renamed after Obama. Here\'s the story behind it..' , user: saima )
 t2 = Travelogue.create(title: 'SouthEast USA', blog: 'I had no idea that there were still so many confederate monuments in the southeast of this country.', user: shannon )
-t3 = Travelogue.create(title: 'Are Road Markers Monuments?', blog: 'What constitues a monument?', user: lex )
+t3 = Travelogue.create(title: 'Are Road Markers Monuments?', blog: 'What constitutes a monument?', user: saima )
 t4 = Travelogue.create(title: 'Should monuments have a place in our museums?', blog: 'What relics of our past can tell us about our future and how museums can help', user: saima )
+
+mt1= MonTravel.create(travelogue: t1, monument: Monument.third)
+mt1= MonTravel.create(travelogue: t2, monument: Monument.fourth)
+mt1= MonTravel.create(travelogue: t3, monument: Monument.fifth)
+mt1= MonTravel.create(travelogue: t4, monument: Monument.second)
+
 
 
 
