@@ -12,7 +12,7 @@ class MonumentsController < ApplicationController
     end
 
     def show
-        render json: Monument.find(params[:id].to_json(:except => [ :created_at, :updated_at ]))
+        render json: Monument.find(params[:id]).to_json(:include => :mon_travels)
     end
 
 

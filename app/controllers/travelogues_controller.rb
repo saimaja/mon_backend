@@ -5,7 +5,7 @@ class TraveloguesController < ApplicationController
     end
 
     def show
-        render json: Travelogue.find(params[:id]).to_json(:include => :monuments)
+        render json: Travelogue.find(params[:id]).to_json(:include => :mon_travels)
     end
 
 end
