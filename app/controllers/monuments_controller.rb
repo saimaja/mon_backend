@@ -1,7 +1,7 @@
 class MonumentsController < ApplicationController
 
     def index
-        render json: Monument.all.to_json(:except => [ :created_at, :updated_at], :include => :mon_travels)
+        render json: Monument.all.to_json(:include => :mon_travels)
     end
 
     def map

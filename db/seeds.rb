@@ -18,8 +18,9 @@ csv = CSV.parse(csv_blog, :headers => true, :encoding => 'ISO-8859-1')
 count = 0
 csv.each do |row|
     count=count+1
-    if count = 21
+    if count == 21
         break
+    end
     # byebug
     if row['Year Dedicated'] == nil
         yd = nil
