@@ -13,6 +13,12 @@ class TraveloguesController < ApplicationController
         render json: travelogue
     end
 
+    def update
+        travelogue = Travelogue.find(params[:id])
+        travelogue.update(travelogueParams)
+        render json: travelogue
+    end
+
     def destroy
         render json: Travelogue.destroy(params[:id])
     end
