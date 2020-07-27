@@ -1,3 +1,3 @@
 class TravelogueSerializer < ActiveModel::Serializer
-    attributes :blog, :user_id
+    attributes :title, :blog, :user_id
 end

@@ -15,7 +15,11 @@ Favorite.destroy_all
 require 'csv'
 csv_blog = File.read(Rails.root.join('lib', 'seeds', 'heritage.csv'))
 csv = CSV.parse(csv_blog, :headers => true, :encoding => 'ISO-8859-1')
+count = 0
 csv.each do |row|
+    count=count+1
+    if count = 21
+        break
     # byebug
     if row['Year Dedicated'] == nil
         yd = nil
