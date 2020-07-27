@@ -9,7 +9,8 @@ class TraveloguesController < ApplicationController
     end
 
     def create 
-        travelogue = Travelogue.create_or_find_by(travelogueParams)
+        travelogue = Travelogue.create_or_find_by(title: params[:title], blog: params[:blog], user_id: params[:user_id], monument_ids: params[:monument_ids])
+        
         render json: travelogue.to_json(:include => :mon_travels)
     end
 
@@ -27,7 +28,7 @@ class TraveloguesController < ApplicationController
 
     private
     def travelogueParams
-        params.require(:travelogue).permit(:blog, :user_id, :title, :monument_ids)
+        params.require(:travelogue).permit(:blog, :user_id, :title, monument_ids: [])
     end
 
 
