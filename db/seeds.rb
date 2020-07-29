@@ -18,7 +18,7 @@ csv = CSV.parse(csv_blog, :headers => true, :encoding => 'ISO-8859-1')
 count = 0
 csv.each do |row|
     count=count+1
-    if count == 20
+    if count == 1000
         break
     end
     # byebug
