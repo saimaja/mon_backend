@@ -8,6 +8,10 @@ class TraveloguesController < ApplicationController
         render json: Travelogue.find(params[:id]).to_json(:include => [:user, :mon_travels])
     end
 
+    def blogs
+        render json: Travelogue.find(params[:id]).to_json(:include => [:user, :mon_travels])
+    end
+
     def create 
         travelogue = Travelogue.create_or_find_by(title: params[:title], blog: params[:blog], user_id: params[:user_id], monument_ids: params[:monument_ids])
         render json: travelogue.to_json(:include => :mon_travels)

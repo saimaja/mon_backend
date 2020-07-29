@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   post '/login', to: 'users#login'
   get '/map', to: 'monuments#map'
   get '/about', to: 'monuments#about'
+  get '/blogs', to: 'travelogues#blogs'
   resources :monuments
   resources :mon_travels
   resources :favorites
